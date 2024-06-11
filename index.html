@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width" />
-        <title>Kyle Rankin</title>
+        <title>Kyle Rankin | Portfolio</title>
         <link rel="stylesheet" type="text/css" href="./CSS/portfolio.css">
     </head>
 
@@ -14,9 +14,10 @@
         <!--Nav-->
         <div class="Navbar">
             <a class="active" href="#Home">Home</a>
+            <a href="#Slideshow">Slideshow</a>
             <a href="#About">About</a>
-            <a href="#GitHub">GitHub</a>
-            <a href="#Contact">Contact</a>
+            <a href="#Links">Links</a>
+            <a onclick="openForm()" ondblclick="closeForm()" class="contact">Contact</a>
         </div>
 
         <br>
@@ -46,6 +47,58 @@
             </strong>
         </div>
 
+        <!--Slideshow-->
+        <div id="Slideshow">
+            <div id="Slideshow_Background">
+                <div id="Slideshow_Container">
+                <!--Slide 1 of 6-->
+                <div class="mySlides fade">
+                    <img class="Slideshow_Images" src="./Media/Profile.png" alt="Picture of Me">
+                    <div class="text">I'm available to assist you on your project!</div>
+                </div>
+                <!--Slide 2 of 6-->
+                <div class="mySlides fade">
+                    <img class="Slideshow_Images" src="./Media/HTML_CSS_and_JavaScript.jpeg" alt="HTML, CSS, and JS logos">
+                    <div class="text">I am a full-stack software developer,<br> trained in:<br>HTML, CSS, JavaScript,</div>
+                </div>
+                <!--Slide 3 of 6-->
+                <div class="mySlides fade">
+                    <img class="Slideshow_Images" src="./Media/Python.png" alt="Python logo">
+                    <div class="text">the popular programming language Python,</div>
+                </div>
+                <!--Slide 4 of 6-->
+                <div class="mySlides fade">
+                    <img class="Slideshow_Images" src="./Media/C_Sharp_and_Dot_NET.png" alt="C# logo">
+                    <div class="text">C#, .NET Framework, ASP.NET, MVC, </div>
+                </div>
+                <!--Slide 5 of 6-->
+                <div class="mySlides fade">
+                    <img class="Slideshow_Images" src="./Media/SQL_and_Database.jpg" alt="SQL logo">
+                    <div class="text">back end development, databases and SQL.</div>
+                </div>
+                <!--Slide 6 of 6-->
+                <div class="mySlides fade">
+                    <img class="Slideshow_Images" src="./Media/contact.png" alt="Contact">
+                    <div class="text"><a class="white-text contact" onclick="openForm()">Contact me now!</a></div>
+                </div>
+                <!--Previous and next buttons-->
+                <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+
+            <!--Slideshow dots to navigate through-->
+            <div style="text-align: center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span> 
+                <span class="dot" onclick="currentSlide(4)"></span> 
+                <span class="dot" onclick="currentSlide(5)"></span> 
+                <span class="dot active" onclick="currentSlide(6)"></span> 
+            </div>
+        </div>
+    </div>
+
         <!--About-->
         <div class="Row" id="About">
             <!--Left Column-->
@@ -60,20 +113,24 @@
                     <br>
                     <br>I am a graduate of <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a>’s Software Developer Boot Camp, and trained and experienced in the following web and programming languages: HTML, CSS, JavaScript, SQL, C# and more. 
                     <br>
-                    <br>I am a full-stack developer and would love to work with you on your project. <a href="#Contact">Contact</a> me below!
+                    <br>I am a full-stack developer and would love to work with you on your project. <a onclick="openForm()" class="contact">Contact</a> me below!
                 </p>
             </div>
         </div>
 
-        <!--GitHub-->
-        <div class="Row" id="GitHub">
+        <!--Links-->
+        <div class="Row" id="Links">
             <!--Left Column-->
             <div class="Column_1">
-                <h1>GitHub</h1>
+                <h1>Links</h1>
                 <p>
                     You can view my coding projects on my GitHub profile here:
                     <br>
                     <p class="center"><a href="https://github.com/KDRank" target="_blank">Kyle Rankin's GitHub</a></p>
+                    <br>
+                    My LinkedIn profile here:
+                    <br>
+                    <p class="center"><a href="https://www.linkedin.com/in/kyle-rankin-89538b89/" target="_blank">Kyle Rankin's LinkedIn Profile</a>
                 </p>
             </div>
             <!--Right Column-->
@@ -83,22 +140,22 @@
         </div>
 
         <!--Contact-->
-        <div class="Row" id="Contact">
-            <!--Contact image, left column-->
-            <div class="Column_2 Column_tall">
-                <img src="./Media/pexels-padrinan-1591062.jpg" alt="Contact_Image">
-            </div>
-            <!--Contact form, right column-->
-            <div class="Column_1 Column_tall">
-                <h1>Contact</h1>
-                <form action="https://formspree.io/f/xvoenenn" method="POST">
-                    <label>Name:</label>
-                        <input type="text" placeholder="Please enter your name here">
-                    <label>Email:</label>
-                        <input type="text" id="Email" name="Email" placeholder="Please enter your email here">
-                    <label>Message:</label>
-                        <input type="text" id="Message" name="Message" placeholder="Please write your message here">
-                        <input type="submit" value="SUBMIT">
+        <div id="Contact">
+            <button onclick="openForm()" class="Pop_Up_Button">CONTACT</button>
+            <div class="form-popup" id="myForm">
+                <form action="https://formspree.io/f/xvoenenn" method="POST" class="form-container">
+                    <h1>Contact</h1>
+                        <label for="name"><b>Name:</b></label>
+                            <input type="text" placeholder="Please enter your name here" name="name" required>
+                        <label for="phone"><b>Phone</b></label>
+                            <input type="text" placeholder="Please enter your phone number here" name="phone">
+                        <label for="email"><b>Email:</b></label>
+                            <input type="text" id="Email" placeholder="Please enter your email here" name="email" required>
+                        <label for="message"><b>Message:</b></label>
+                            <input type="text" id="Message" name="Message" placeholder="Please write your message here">
+    
+                        <button type="submit" class="btn">SUBMIT</button>
+                        <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
                 </form>
             </div>
         </div>
@@ -110,5 +167,6 @@
                 <br>
             </p>
         </footer>
+        <script src="./JS/portfolio.js"></script>
     </body>
     </html>
