@@ -219,7 +219,7 @@ footer {
 /*Slideshow section container*/
 #Slideshow_Container {
     width: 39.5vw; /*Relative sizing of container for slideshow set to 39.5% of viewport width*/
-    height: auto; /*Container heigh automatically adjusted based on content displayed*/
+    height: auto; /*Container height automatically adjusted based on content displayed*/
     padding-top: 4%; /*Small padding to top of slideshow container*/
     position: relative; /*Sets container relative to normal positioning*/
     margin: auto; /*Horizontally center container on page*/
@@ -254,7 +254,7 @@ footer {
 /*Next button positioned on right hand side*/
 .Next {
     right: 0; /*Moves button to right side of slideshow container*/
-    border-radius: 3px 0 0 3px; /*Changes border radius on next buttom to top and bottom left of button*/
+    border-radius: 3px 0 0 3px; /*Changes border radius on next button to top and bottom left of button*/
 }
 
 /*Hover effect on slideshow buttons*/
